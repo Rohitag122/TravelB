@@ -1,0 +1,22 @@
+<div class="container">
+    <header>
+        <h1>Online Booking System</h1>
+        <nav>
+            <ul>
+                <li><a routerLink="/buses" routerLinkActive="active">Buses</a></li>
+                <li><a routerLink="/flights" routerLinkActive="active">Flights</a></li>
+                <li><a routerLink="/hotels" routerLinkActive="active">Hotels</a></li>
+                <li><a routerLink="/trains" routerLinkActive="active">Trains</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <router-outlet></router-outlet>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Online Booking System. All rights reserved.</p>
+    </footer>
+</div>
+<app-booking-history><app-booking-history>
