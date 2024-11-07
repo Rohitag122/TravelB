@@ -1,0 +1,33 @@
+<div class="profile-container" *ngIf="user">
+  <h2>User Profile</h2>
+  <div class="profile-info">
+    <img [src]="user.profilePicture" alt="{{ user.name }}'s Profile Picture" class="profile-pic">
+    <h3>{{ user.name }}</h3>
+    <p>Email: {{ user.email }}</p>
+    <p>Phone: {{ user.phone }}</p>
+    <p>Address: {{ user.address }}</p>
+  </div>
+
+  <h3>Your Bookings</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Booking ID</th>
+        <th>Hotel Name</th>
+        <th>Check-In</th>
+        <th>Check-Out</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let booking of user.bookings">
+        <td>{{ booking.bookingId }}</td>
+        <td>{{ booking.hotelName }}</td>
+        <td>{{ booking.checkInDate }}</td>
+        <td>{{ booking.checkOutDate }}</td>
+        <td>${{ booking.price }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="!user">Loading user profile...</div>
